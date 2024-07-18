@@ -4,3 +4,51 @@
   padding: 2rem;
   text-align: center;
 }
+
+h1 {
+margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-weight: bolder;
+}
+
+.calculator {
+  max-width: 600px;
+  margin: 0px auto;
+  padding: 1rem;
+  border: 1px solid #f95959;
+  border-radius: 8px;
+  background-color: #455d7a;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  font-weight: bolder;
+  margin-right: 1em;
+}
+
+.input-group input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  width: 100%;
+  background-color: #233142;
+}
+
+.eta-container {
+  margin-top: 1rem;
+}
+
+.eta-container h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}

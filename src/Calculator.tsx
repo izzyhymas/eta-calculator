@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./App.css";
 
 const Calculator: React.FC = () => {
   const [distance, setDistance] = useState<number | string>("");
@@ -52,30 +53,32 @@ const Calculator: React.FC = () => {
 
   return (
     <>
-      <form>
-        <div>
-          <label htmlFor="distance">Distance</label>
-          <input
-            type="number"
-            id="distance"
-            value={distance}
-            placeholder="Enter Distance"
-            onChange={handleDistanceChange}
-          ></input>
+      <div className="calculator">
+        <form>
+          <div className="input-group">
+            <label htmlFor="distance">Distance</label>
+            <input
+              type="number"
+              id="distance"
+              value={distance}
+              placeholder="Enter Distance"
+              onChange={handleDistanceChange}
+            ></input>
+          </div>
+          <div className="input-group">
+            <label htmlFor="speed">Speed</label>
+            <input
+              type="number"
+              id="speed"
+              value={speed}
+              placeholder="Enter Speed"
+              onChange={handleSpeedChange}
+            ></input>
+          </div>
+        </form>
+        <div className="eta">
+          <h3>Estimated Time of Arrival (ETA): {`${eta} hours`}</h3>
         </div>
-        <div>
-          <label htmlFor="speed">Speed</label>
-          <input
-            type="number"
-            id="speed"
-            value={speed}
-            placeholder="Enter Speed"
-            onChange={handleSpeedChange}
-          ></input>
-        </div>
-      </form>
-      <div>
-        <h3>Estimated Time of Arrival (ETA): {`${eta} hours`}</h3>
       </div>
     </>
   );
