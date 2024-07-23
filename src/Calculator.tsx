@@ -10,9 +10,9 @@ const Calculator: React.FC = () => {
   const handleDistanceChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ): void => {
-    const value = event.target.valueAsNumber;
-    // Ensures that number can't be less than 0
-    if (value >= 0) {
+    const value = event.target.value;
+    // Clears input by converting value to number
+    if (value === "" || Number(value) >= 0) {
       setDistance(value);
     }
   };
@@ -21,9 +21,9 @@ const Calculator: React.FC = () => {
   const handleSpeedChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ): void => {
-    const value = event.target.valueAsNumber;
-    // Ensures that number can't be less than 0
-    if (value >= 0) {
+    const value = event.target.value;
+    // Clears input by converting value to number
+    if (value === "" || Number(0) >= 0) {
       setSpeed(value);
     }
   };
@@ -35,16 +35,16 @@ const Calculator: React.FC = () => {
 
   // Function to calculate ETA
   const calculateETA = () => {
-    // distance && speed makes sure that the variables have value
-    // Checks that the types of distance and speed are number so we can do our ETA calculation below
+    // Checks that distance and speed are not equal to empty strings
+    // Checks if distance and speed can be converted into numbers
     if (
-      distance &&
-      speed &&
-      typeof distance === "number" &&
-      typeof speed === "number"
+      distance !== "" &&
+      speed != "" &&
+      !isNaN(Number(distance)) &&
+      !isNaN(Number(speed))
     ) {
       // Math equation to get ETA rounded to 2 decimals
-      const time: number = distance / speed;
+      const time: number = Number(distance) / Number(speed);
       setETA(time.toFixed(2));
     } else {
       setETA("");
